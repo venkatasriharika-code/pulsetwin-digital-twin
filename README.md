@@ -138,6 +138,6 @@ The live WebSocket simulation automatically generates and persists a proposed st
 
 The `/staffing` Staffing Ops screen provides plan generation, current/next/following-shift recommendations, resource reallocations, confidence, and an Apply to baseline control.
 
-## GitHub Pages
+## Vercel deployment
 
-The repository includes `.github/workflows/deploy-pages.yml`. Every push to `main` builds and deploys the frontend to GitHub Pages. The published frontend is a static client; its full API, WebSocket, persistence, and model-training features require the backend to be deployed separately and configured through `VITE_API_BASE_URL`. The local development default remains `http://localhost:8000`.
+The repository includes `vercel.json` for deploying the React/Vite frontend from the `frontend` directory. Import this repository into Vercel with the default project settings; Vercel will run the frontend build and serve the SPA routes correctly. Set `VITE_API_BASE_URL` in the Vercel project environment variables to the deployed FastAPI backend URL so the live simulation, alerts, recommendations, persistence, and model APIs work in production. The local development default remains `http://localhost:8000`.
